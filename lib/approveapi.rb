@@ -14,19 +14,19 @@ require 'approveapi_swagger/version'
 require 'approveapi_swagger/configuration'
 
 # Models
+require 'approveapi_swagger/models/answer_metadata'
+require 'approveapi_swagger/models/create_prompt_request'
+require 'approveapi_swagger/models/error'
+require 'approveapi_swagger/models/prompt'
+require 'approveapi_swagger/models/prompt_answer'
+require 'approveapi_swagger/models/prompt_metadata'
+require 'approveapi_swagger/models/prompt_status'
 
 # APIs
 require 'approveapi_swagger/api/approve_api'
 
 module ApproveAPI
-  include 'approveapi_swagger/models/answer_metadata'
-  include 'approveapi_swagger/models/create_prompt_request'
-  include 'approveapi_swagger/models/error'
-  include 'approveapi_swagger/models/prompt'
-  include 'approveapi_swagger/models/prompt_answer'
-  include 'approveapi_swagger/models/prompt_metadata'
-  include 'approveapi_swagger/models/prompt_status'
-
+  include ApproveAPISwagger
   class << self
     # Customize default settings for the SDK using block.
     #   ApproveAPISwagger.configure do |config|
