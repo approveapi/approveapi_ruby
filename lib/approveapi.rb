@@ -26,20 +26,18 @@ require 'approveapi_swagger/models/prompt_status'
 require 'approveapi_swagger/api/approve_api'
 
 module ApproveAPI
-  include ApproveAPISwagger
-  class << self
-    # Customize default settings for the SDK using block.
-    #   ApproveAPISwagger.configure do |config|
-    #     config.username = "xxx"
-    #     config.password = "xxx"
-    #   end
-    # If no block given, return the default Configuration object.
-    def configure
-      if block_given?
-        yield(Configuration.default)
-      else
-        Configuration.default
-      end
-    end
-  end
+	include ApproveAPISwagger
+	class << self
+		def create_client(secret_api_key)
+			self.configure |config| {
+				config.username = secret_api_key
+			}
+			client = self::ApproveAPI.new
+			if block_given?
+				yield(client)
+			else
+				client
+			end
+		end
+	end
 end
