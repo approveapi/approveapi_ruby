@@ -29,9 +29,9 @@ module ApproveAPI
 	include ApproveAPISwagger
 	class << self
 		def create_client(secret_api_key)
-			self.configure |config| {
+			self.configure do |config|
 				config.username = secret_api_key
-			}
+			end
 			client = self::ApproveAPI.new
 			if block_given?
 				yield(client)
