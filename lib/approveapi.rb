@@ -7,32 +7,18 @@ Contact: hello@approveapi.com
 
 =end
 
-# Common files
-require 'approveapi_swagger/api_client'
-require 'approveapi_swagger/api_error'
-require 'approveapi_swagger/version'
-require 'approveapi_swagger/configuration'
-
-# Models
-require 'approveapi_swagger/models/answer_metadata'
-require 'approveapi_swagger/models/create_prompt_request'
-require 'approveapi_swagger/models/error'
-require 'approveapi_swagger/models/prompt'
-require 'approveapi_swagger/models/prompt_answer'
-require 'approveapi_swagger/models/prompt_metadata'
-require 'approveapi_swagger/models/prompt_status'
-
-# APIs
-require 'approveapi_swagger/api/approve_api'
+require 'approveapi_swagger'
 
 module ApproveAPI
+	# re-export constants
 	include ApproveAPISwagger
+
 	class << self
 		def create_client(secret_api_key)
-			self.configure do |config|
+			ApproveAPISwagger.configure do |config|
 				config.username = secret_api_key
 			end
-			client = self::ApproveAPI.new
+			client = ApproveAPISwagger::ApproveApi.new
 			if block_given?
 				yield(client)
 			else
