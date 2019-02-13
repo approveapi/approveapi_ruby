@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    approveapi (1.0.4)
+    approveapi (1.0.5)
       approveapi_swagger (~> 1.0, >= 1.0.0)
 
 GEM

@@ -1,1 +1,3 @@
-module ApproveAPI\n  VERSION = '1.0.5'\nend
+module ApproveAPI
+  VERSION = '1.0.5'
+end
