@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    approveapi (1.0.5)
+    approveapi (1.0.6)
       approveapi_swagger (~> 1.0, >= 1.0.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    approveapi_swagger (1.0.1)
+    approveapi_swagger (1.0.2)
       json (~> 2.1, >= 2.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
     ethon (0.12.0)
