@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.license     = "Unlicense"
   s.required_ruby_version = ">= 1.9"
 
-  s.add_runtime_dependency 'approveapi_swagger', '~> 1.0', '>= 1.0.0'
+  s.add_runtime_dependency 'approveapi_swagger', '~> 1.0', '>= 1.0.6'
 
   s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
   s.test_files    = []
